@@ -19,3 +19,15 @@ Yukarıda belirtilen adımlar uygulandıktan sonra aşağıdaki çıkarımlar ya
 
 ## Veriseti & Veri Ön İşleme Hk.
 
+Veriler "Sales", "Customer" ve "Product" adında üç veri seti şeklindedir. "Sales" veri seti her bir kullanıcının yaptığı alışverişe ilişkin verileri tutar. "Customer" veri seti her bir müşteriye ilişkin bilgileri (Yaş, Cinsiyet, İkamet Yeri) tutar. "Product" veri seti ise her bir ürüne ilişkin kodu ve ürünün ne olduğunun bilgilerini tutar.  
+
+Bu üç veri seti kullanılarak müşterileri genel yargıda değerlendirebilecek bir veri seti oluşturuldu. Bu aşamada;  
+* kayıp veriler incelendi.  
+* Kategorik değişkenler OHEncode edilip müşterileri genel manada yargılayacak şekilde ayarlandı.  
+* Numerik verilerin standartlaştırılması ise makine öğrenmesi kısmında modele göre değişecek şekilde ele alınacaktır.  
+
+En nihayetinde tüm veri setleri kullanılarak gerekli analizler ile müşterilerin hakkında genel bilgi içerecek şekilde düzenlendi. Detaylı bilgilere `./Notebooks/2-preprocessing.ipynb` uzantısındaki notebook'tan ulaşılabilir.  
+
+<hr>
+
+## Makine Öğrenmesi & Tahminleme  

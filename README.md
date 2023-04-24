@@ -1,4 +1,17 @@
-<h1 align="center">METU Datathon Raporlaması</h1>
+<h1 align="center">METU Datathon Proje Raporu</h1>
+<hr>
+
+<p align="center">
+  <img src='./Images/METU-Stat-Logo.png' style="float: left;margin:5px 20px 5px 1px" height='170'>
+</p>
+
+## Akış Şeması
+[Giriş](#giriş)  
+[Veri Seti & Veri Ön İşleme](#veriseti--veri-ön-i̇şleme-hk)  
+[Makine Öğrenmesi & Tahminleme](#makine-öğrenmesi--tahminleme)  
+[Modellerin Değerlendirilmesi](#model-değerlendirmesi)  
+
+<br>
 <hr>
 
 ## Giriş
@@ -31,3 +44,49 @@ En nihayetinde tüm veri setleri kullanılarak gerekli analizler ile müşterile
 <hr>
 
 ## Makine Öğrenmesi & Tahminleme  
+
+Makine öğrenmesi modeller hususunda veri seti incelendiğinde denenecek modeller aşağıdaki gibi seçildi:  
+
+1. ↘️ Karar Ağaçları (Decision Trees):  
+* Yüksek korelasyona sahip değişkenler mevcut ve bu durum lojistik regresyon modeli için sıkıntı yaratabilir. Karar ağaçları bu durumda daha iyi performans gösterebilir.  
+* Karar ağaçları aynı zamanda değişkenler arasındaki ilişkileri anlamak için kullanışlıdır.  
+* Karar ağaçları kolayca anlaşılabilen bir modeldir. Karar ağaçları modeli, kararlarımızı neden aldığımızı anlamak isteyen müşterilerimize de açıklayabiliriz. 
+
+<br>
+
+2. ↘️ Rastgele Ormanlar (Random Forest):  
+* Rastgele ormanlar, yüksek boyutlu ve karmaşık veri setleri için genellikle iyi sonuçlar verir. Veri setimizde 38 değişken var ve rastgele ormanlar bu değişkenler arasındaki ilişkileri iyi bir şekilde ele alabilir.  
+* Rastgele ormanlar aynı zamanda açıklayıcılık açısından da faydalıdır. Her bir karar ağacı için özellik önem derecelerini hesaplayarak, hangi özelliklerin modeldeki tahminler için en önemli olduğunu belirleyebiliriz.
+
+<br>
+
+3. ↘️ Gradient Boosting (Gradient Boosted Trees):  
+* Gradient Boosting, yüksek boyutlu ve karmaşık veri setleri için de iyi sonuçlar verir.  
+* Gradient Boosting aynı zamanda overfitting'i önlemek için de kullanılabilir. Bu durum, modelimizi daha genelleştirilebilir hale getirerek tahminlerin doğruluğunu artırabilir.  
+
+Model testleri yapıldıktan sonra modeller aşağıdaki metrikler ile değerlendirildi:  
+<hr>
+
+## Model Değerlendirmesi
+
+$$Accuracy(Doğruluk) = \frac{\text{Doğru sınıflandırılan örnek sayısı}}{\text{Toplam örnek sayısı}}$$
+
+$$Precision(Hassasiyet) = \frac{\text{Gerçek pozitiflerin sayısı}}{\text{Toplam pozitif tahminlerin sayısı}}$$
+
+$$Recall(Duyarlılık) = \frac{\text{Gerçek pozitiflerin sayısı}}{\text{Toplam gerçek pozitiflerin sayısı}}$$
+
+$$F1\text{ }Score = 2 \cdot \frac{Precision \cdot Recall}{Precision + Recall}$$
+
+<br>
+
+En nihayetinde elde edilen sonuçlar ise aşağıdaki tablodaki gibi bulundu:  
+
+<div align="center">
+
+| Model | Accuracy | Precision | Recall | F1 Score | AUC |  
+|:-----:|---------:|----------:|-------:|---------:|----:|
+|Decision Tree|0.736|0.629|0.656|0.642|0.719|
+|Random Forest|0.776|0.718|0.625|0.668|0.744|
+|Gradient Boosting Trees|0.798|0.785|0.607|0.685|0.757|
+
+</div>

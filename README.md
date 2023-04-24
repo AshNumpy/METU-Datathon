@@ -6,12 +6,11 @@
 </p>
 
 ## Akış Şeması
-[Giriş](#giriş)  
-[Veri Seti & Veri Ön İşleme](#veriseti--veri-ön-i̇şleme-hk)  
-[Makine Öğrenmesi & Tahminleme](#makine-öğrenmesi--tahminleme)  
-[Modellerin Değerlendirilmesi](#model-değerlendirmesi)  
+1. [Giriş](#giriş)  
+1. [Veri Seti & Veri Ön İşleme](#veriseti--veri-ön-i̇şleme-hk)  
+1. [Makine Öğrenmesi & Tahminleme](#makine-öğrenmesi--tahminleme)  
+1. [Modellerin Değerlendirilmesi](#model-değerlendirmesi)  
 
-<br>
 <hr>
 
 ## Giriş
